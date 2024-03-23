@@ -1,14 +1,15 @@
+
 public class Radio {
     private int currentStation;
-    private int currentVolume;
+    public int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+   // public int getCurrentVolume() {
+     //   return currentVolume;
+    //}
 
     public void setCurrentStation(int station) {
         if (station > 9) {                      //выставление станции в пределах допустимого диапазона
@@ -20,15 +21,7 @@ public class Radio {
         }
     }
 
-    public void setCurrentVolume(int volume) {
-        if (volume > 100) {                     //в задаче нет ничего про выставление громкости через прямое указание
-            currentVolume = 100;                //но я добавил этот класс для более полного тестирования
-        } else if (volume < 0) {
-            currentVolume = 0;
-        } else {
-            currentVolume = volume;
-        }
-    }
+
 
     public void next() {
         if (currentStation == 9) {                  //проверяет изначальное значение станции;
