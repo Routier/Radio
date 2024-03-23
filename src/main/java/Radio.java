@@ -28,8 +28,8 @@ public class Radio {
     }
 
     public void prev() {
-        if (currentStation != 0) {                  //проверяет изначальное значение станции;
-            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение не 0;
+        if (currentStation > 0) {                   //проверяет изначальное значение станции;
+            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение больше 0;
         } else {                                    //если значение 0, то выставляет на 9
             currentStation = 9;
         }
