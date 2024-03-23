@@ -122,7 +122,7 @@ public class RadioTest {
     @Test
     public void radioVolumeDecreaseFromMax() {
         Radio volume = new Radio();
-        volume.currentVolume=100;
+        volume.currentVolume = 100;
         volume.decreaseVolume();
 
         int expected = 99;

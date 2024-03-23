@@ -7,9 +7,6 @@ public class Radio {
         return currentStation;
     }
 
-   // public int getCurrentVolume() {
-     //   return currentVolume;
-    //}
 
     public void setCurrentStation(int station) {
         if (station > 9) {                      //выставление станции в пределах допустимого диапазона
@@ -20,7 +17,6 @@ public class Radio {
             currentStation = station;
         }
     }
-
 
 
     public void next() {
