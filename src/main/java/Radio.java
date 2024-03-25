@@ -9,7 +9,7 @@ public class Radio {
         this.stationSize = stationSize;
     }
 
-    public Radio(){
+    public Radio() {
         this.stationSize = 10;
     }
 
@@ -21,13 +21,13 @@ public class Radio {
         return currentVolume;
     }
 
-    public int getStationSize(){
+    public int getStationSize() {
         return stationSize - 1;
     }
 
     public void setCurrentStation(int station) {
         if (station > stationSize - 1) {             //выставление станции в пределах допустимого диапазона
-            currentStation = stationSize -1;
+            currentStation = stationSize - 1;
         } else if (station < 0) {
             currentStation = 0;
         } else {
@@ -57,7 +57,7 @@ public class Radio {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
         } else {
-            currentStation = stationSize -1;
+            currentStation = stationSize - 1;
         }
     }
 
