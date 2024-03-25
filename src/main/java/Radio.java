@@ -1,12 +1,14 @@
-
 public class Radio {
     private int currentStation;
-    public int currentVolume;
+    private int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
     }
 
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
 
     public void setCurrentStation(int station) {
         if (station > 9) {                      //выставление станции в пределах допустимого диапазона
@@ -18,6 +20,15 @@ public class Radio {
         }
     }
 
+    public void setCurrentVolume(int volume) {
+        if (volume > 100) {                     // выставление громкости через прямое указание
+            currentVolume = 100;
+        } else if (volume < 0) {
+            currentVolume = 0;
+        } else {
+            currentVolume = volume;
+        }
+    }
 
     public void next() {
         if (currentStation == 9) {                  //проверяет изначальное значение станции;
@@ -28,8 +39,8 @@ public class Radio {
     }
 
     public void prev() {
-        if (currentStation > 0) {                   //проверяет изначальное значение станции;
-            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение больше 0;
+        if (currentStation != 0) {                  //проверяет изначальное значение станции;
+            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение не 0;
         } else {                                    //если значение 0, то выставляет на 9
             currentStation = 9;
         }
