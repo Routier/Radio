@@ -1,16 +1,16 @@
 public class Radio {
-    private int stationMin;
-    private int stationMax;
-    private int volumeMin;
-    private int volumeMax;
+    private int stationSize;
+    private int volumeMin = 0;
+    private int volumeMax = 100;
     private int currentStation;
     private int currentVolume;
 
-    public Radio(int stationMin, int stationMax, int volumeMin, int volumeMax) {
-        this.stationMin = stationMin;
-        this.stationMax = stationMax;
-        this.volumeMin = volumeMin;
-        this.volumeMax = volumeMax;
+    public Radio(int stationSize) {
+        this.stationSize = stationSize;
+    }
+
+    public Radio(){
+        this.stationSize = 10;
     }
 
     public int getCurrentStation() {
@@ -21,25 +21,13 @@ public class Radio {
         return currentVolume;
     }
 
-    public int getStationMin() {
-        return stationMin;
-    }
-
-    public int getStationMax() {
-        return stationMax;
-    }
-
-    public int getVolumeMin() {
-        return volumeMin;
-    }
-
-    public int getVolumeMax() {
-        return volumeMax;
+    public int getStationSize(){
+        return stationSize - 1;
     }
 
     public void setCurrentStation(int station) {
-        if (station > 9) {                      //выставление станции в пределах допустимого диапазона
-            currentStation = 9;
+        if (station > stationSize - 1) {             //выставление станции в пределах допустимого диапазона
+            currentStation = stationSize -1;
         } else if (station < 0) {
             currentStation = 0;
         } else {
@@ -58,18 +46,18 @@ public class Radio {
     }
 
     public void next() {
-        if (currentStation == 9) {                  //проверяет изначальное значение станции;
-            currentStation = 0;                     //если равно 9, то выставляет на 0
-        } else {                                    //во всех остальных случаях увеличивает значение на 1
+        if (currentStation == stationSize - 1) {
+            currentStation = 0;
+        } else {
             currentStation = currentStation + 1;
         }
     }
 
     public void prev() {
-        if (currentStation > 0) {                   //проверяет изначальное значение станции;
-            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение юольше 0;
-        } else {                                    //если значение 0, то выставляет на 9
-            currentStation = 9;
+        if (currentStation > 0) {
+            currentStation = currentStation - 1;
+        } else {
+            currentStation = stationSize -1;
         }
     }
 
