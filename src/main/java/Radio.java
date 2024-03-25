@@ -1,6 +1,17 @@
 public class Radio {
+    private int stationMin;
+    private int stationMax;
+    private int volumeMin;
+    private int volumeMax;
     private int currentStation;
     private int currentVolume;
+
+    public Radio(int stationMin, int stationMax, int volumeMin, int volumeMax) {
+        this.stationMin = stationMin;
+        this.stationMax = stationMax;
+        this.volumeMin = volumeMin;
+        this.volumeMax = volumeMax;
+    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -8,6 +19,22 @@ public class Radio {
 
     public int getCurrentVolume() {
         return currentVolume;
+    }
+
+    public int getStationMin() {
+        return stationMin;
+    }
+
+    public int getStationMax() {
+        return stationMax;
+    }
+
+    public int getVolumeMin() {
+        return volumeMin;
+    }
+
+    public int getVolumeMax() {
+        return volumeMax;
     }
 
     public void setCurrentStation(int station) {
@@ -39,8 +66,8 @@ public class Radio {
     }
 
     public void prev() {
-        if (currentStation != 0) {                  //проверяет изначальное значение станции;
-            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение не 0;
+        if (currentStation > 0) {                   //проверяет изначальное значение станции;
+            currentStation = currentStation - 1;    //уменьшает значение на 1, если значение юольше 0;
         } else {                                    //если значение 0, то выставляет на 9
             currentStation = 9;
         }
